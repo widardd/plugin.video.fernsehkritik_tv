@@ -135,7 +135,7 @@ def playVideo(urlOne):
                   
                   urlFull="stack://"
                   for i,filename in enumerate(match):
-                      url = 'http://dl' + str(random.randint(1, 3)) + '.fernsehkritik.tv/fernsehkritik' + filename + " , "
+                      url = 'http://dl' + str(random.randint(1, 4)) + '.fernsehkritik.tv/fernsehkritik' + filename + " , "
                       urlFull += url
                   urlFull=urlFull[:-3]
                   
@@ -144,7 +144,7 @@ def playVideo(urlOne):
               else:
                   match = re.compile("file=='(.+?)'", re.DOTALL).findall(content)
                   filename = match[0]
-                  listitem = xbmcgui.ListItem(path='http://dl' + str(random.randint(1,3)) + '.fernsehkritik.tv/antik/' + filename)
+                  listitem = xbmcgui.ListItem(path='http://dl' + str(random.randint(1,4)) + '.fernsehkritik.tv/antik/' + filename)
                   return xbmcplugin.setResolvedUrl(thisPlugin, True, listitem)
             except:
               xbmc.executebuiltin('XBMC.Notification(Info:,'+str(translation(30209))+',5000)')
